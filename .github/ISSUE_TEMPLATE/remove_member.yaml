@@ -1,6 +1,6 @@
 name: 🔒 Solicitar Remoção de Membro
 description: Solicitar a remoção de um membro da organização
-title: "[REMOVE] "
+title: "[REMOVE] Solicitação de remoção de membro"
 labels: ["remover-membro", "em-análise"]
 body:
   - type: markdown
