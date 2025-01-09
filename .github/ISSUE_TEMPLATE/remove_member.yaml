@@ -1,0 +1,39 @@
+name: 🔒 Solicitar Remoção de Membro
+description: Solicitar a remoção de um membro da organização
+title: "[REMOVE] "
+labels: ["remover-membro"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Preencha as informações abaixo para solicitar a remoção de um membro.
+        
+  - type: input
+    id: github-username
+    attributes:
+      label: Username do GitHub
+      description: Digite o username do GitHub do membro a ser removido
+      placeholder: ex. octocat
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Motivo da Remoção
+      description: Selecione o motivo principal da remoção
+      options:
+        - Conclusão do Projeto
+        - Inatividade
+        - Saída Voluntária
+        - Outro
+    validations:
+      required: true
+      
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Informações Adicionais
+      description: Forneça detalhes adicionais sobre a remoção, se necessário
+    validations:
+      required: false
