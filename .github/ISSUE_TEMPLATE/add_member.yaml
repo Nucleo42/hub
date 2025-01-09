@@ -37,20 +37,20 @@ body:
     validations:
       required: true
       
-- type: dropdown
-  id: role
-  attributes:
-    label: Função/Papel
-    description: Selecione qual será o papel/função do membro no projeto
-    options:
-      - Analista de Dados
-      - Cientista de Dados
-      - Desenvolvedor Back-end
-      - Desenvolvedor Front-end
-      - Desenvolvedor Mobile Android
-      - Desenvolvedor Mobile iOS
-      - Desenvolvedor Mobile (multiplataforma)
-      - Engenheiro de Dados
-      - UI/UX Designer
+  - type: dropdown
+    id: role
+    attributes:
+      label: Função/Papel
+      description: Selecione qual será o papel/função do membro no projeto
+      options:
+        - Analista de Dados
+        - Cientista de Dados
+        - Desenvolvedor Back-end
+        - Desenvolvedor Front-end
+        - Desenvolvedor Mobile Android
+        - Desenvolvedor Mobile iOS
+        - Desenvolvedor Mobile (multiplataforma)
+        - Engenheiro de Dados
+        - UI/UX Designer
     validations:
       required: true
