@@ -1,6 +1,6 @@
 name: 🔑 Solicitar Adição de Membro
 description: Solicitar a inclusão de um novo membro na organização
-title: "[ADD] Solicitação de novo membro"
+title: "[ADICIONA MEMBRO] Solicitação de novo membro"
 labels: ["adicionar-membro", "em-análise"]
 body:
   - type: markdown
