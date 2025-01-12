@@ -1,0 +1,79 @@
+name: 🔑 Solicitar Adição de Membro(s)
+description: Solicitar a inclusão de um ou mais novos membros em times específicos
+title: "[ADICIONA MEMBRO(S)] Solicitação de novo(s) membro(s)"
+labels: ["adicionar-membro", "em-análise"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Projeto
+      description: Selecione o projeto relacionado
+      options:
+        - NextStep
+        - Nucleo 42 (Plataforma web)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Adicionar Membro(s) aos Times
+        Para cada time, liste os membros que devem ser adicionados.
+        Se não houver membros para um time específico, deixe o campo em branco.
+        Para o time mobile, especifique a plataforma (Multiplataforma, Android ou iOS) junto ao nome do membro.
+
+  - type: textarea
+    id: backend-members
+    attributes:
+      label: Time Back-end
+      description: Liste os membros a serem adicionados ao time de Back-end
+      placeholder: |
+        GitHub: usuario1, Discord: user1
+        GitHub: usuario2, Discord: user2
+    validations:
+      required: false
+
+  - type: textarea
+    id: dados-members
+    attributes:
+      label: Time Dados
+      description: Liste os membros a serem adicionados ao time de Dados
+      placeholder: |
+        GitHub: usuario3, Discord: user3
+        GitHub: usuario4, Discord: user4
+    validations:
+      required: false
+
+  - type: textarea
+    id: design-members
+    attributes:
+      label: Time Design
+      description: Liste os membros a serem adicionados ao time de Design
+      placeholder: |
+        GitHub: usuario5, Discord: user5
+        GitHub: usuario6, Discord: user6
+    validations:
+      required: false
+
+  - type: textarea
+    id: frontend-members
+    attributes:
+      label: Time Front-end
+      description: Liste os membros a serem adicionados ao time de Front-end
+      placeholder: |
+        GitHub: usuario7, Discord: user7
+        GitHub: usuario8, Discord: user8
+    validations:
+      required: false
+
+  - type: textarea
+    id: mobile-members
+    attributes:
+      label: Time Mobile
+      description: Liste os membros a serem adicionados ao time Mobile, especificando a plataforma
+      placeholder: |
+        GitHub: usuario9, Discord: user9, Plataforma: Android
+        GitHub: usuario10, Discord: user10, Plataforma: iOS
+        GitHub: usuario11, Discord: user11, Plataforma: Multiplataforma
+    validations:
+      required: false
