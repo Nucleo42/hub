@@ -1,0 +1,43 @@
+name: 🔒 Solicitar Remoção de Membro(s)
+description: Solicitar a remoção de um ou mais membros da organização
+title: "[REMOVE MEMBRO(S)] Solicitação de remoção de membro(s)"
+labels: ["remover-membro", "em-análise"]
+body:
+  - type: dropdown
+    id: project
+    attributes:
+      label: Projeto
+      description: Selecione o projeto relacionado
+      options:
+        - NextStep
+        - Nucleo 42 (Plataforma web)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Remover Membro(s) da Organização
+        Liste os membros que devem ser removidos da organização do GitHub.
+        Inclua o motivo da remoção para cada membro (Conclusão do Projeto, Inatividade, Saída Voluntária, Outro).
+
+  - type: textarea
+    id: members-to-remove
+    attributes:
+      label: Membros a serem removidos
+      description: Liste os membros a serem removidos da organização
+      placeholder: |
+        GitHub: usuario1, Motivo: Conclusão do Projeto
+        GitHub: usuario2, Motivo: Inatividade
+        GitHub: usuario3, Motivo: Saída Voluntária
+        GitHub: usuario4, Motivo: Outro (especifique na seção de informações adicionais)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Informações Adicionais
+      description: Forneça detalhes adicionais sobre as remoções, se necessário
+    validations:
+      required: false
