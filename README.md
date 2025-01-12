@@ -1,10 +1,10 @@
-# Nucleo42 Hub
+# Nucleo 42 Hub
 
-Bem-vindo ao Nucleo42 Hub, o repositório central da nossa comunidade de tecnologia dedicada ao aprendizado e desenvolvimento colaborativo.
+Bem-vindo ao Nucleo 42 Hub, o repositório central da nossa comunidade de tecnologia dedicada ao aprendizado e desenvolvimento colaborativo.
 
-## Sobre o Nucleo42
+## Sobre a Nucleo 42
 
-O Nucleo42 é uma comunidade de tecnologia sem fins lucrativos, focada no desenvolvimento pessoal e profissional. Nosso objetivo é criar um ambiente onde iniciantes e profissionais experientes possam aprender, colaborar e crescer juntos.
+A Nucleo 42 é uma comunidade de tecnologia sem fins lucrativos, focada no desenvolvimento pessoal e profissional. Nosso objetivo é criar um ambiente onde iniciantes e profissionais experientes possam aprender, colaborar e crescer juntos.
 
 ### Nossa Missão
 
@@ -62,4 +62,4 @@ Este projeto está licenciado sob a [GNU General Public License v3.0 (GPLv3)](ht
 
 ---
 
-Junte-se a nós no Nucleo42 Hub e faça parte de uma comunidade dedicada ao crescimento mútuo e à inovação em tecnologia!
+Junte-se a nós no Nucleo 42 Hub e faça parte da Nucleo 42, uma comunidade dedicada ao crescimento mútuo e à inovação em tecnologia!
