@@ -9,6 +9,7 @@ body:
       label: Projeto
       description: Selecione o projeto relacionado
       options:
+        - Adoção Tech
         - NextStep
         - Nucleo 42 (Plataforma web)
     validations:
