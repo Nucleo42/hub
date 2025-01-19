@@ -1,0 +1,56 @@
+name: Process New Project Request
+
+on:
+  issues:
+    types:
+      - closed
+
+jobs:
+  process-new-project:
+    if: |
+      contains(github.event.issue.labels.*.name, 'aprovado') &&
+      contains(github.event.issue.labels.*.name, 'novo-projeto')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Extract issue body
+        id: issue-body
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            const projectNameMatch = body.match(/### Nome do Projeto\s*([\s\S]*?)\n###/);
+            const githubUsernameMatch = body.match(/### Seu Username no GitHub\s*([\s\S]*?)\n###/);
+            const useGithubProjectsMatch = body.match(/### Usar GitHub Projects\?\s*([\s\S]*?)\n###/);
+            const repositoriesMatches = [...body.matchAll(/- \[x\]\s*(.+)/g)];
+
+            const projectName = projectNameMatch?.[1]?.trim() || 'Unknown Project';
+            const githubUsername = githubUsernameMatch?.[1]?.trim() || 'Unknown Username';
+            const useGithubProjects = useGithubProjectsMatch?.[1]?.trim().toLowerCase() === 'sim' ? 'true' : 'false';
+
+            const repositories = repositoriesMatches.map(match => match[1]?.trim());
+
+            core.setOutput('project-name', projectName);
+            core.setOutput('use-github-projects', useGithubProjects);
+            core.setOutput('repositories', JSON.stringify(repositories));
+            core.setOutput('github-username', githubUsername);
+
+      - name: Run add env on project script
+        env:
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+        run: |
+          echo -e "TOKEN_GITHUB=$TOKEN_GITHUB" > .env
+      - name: Run add project script
+        run: |
+          bun run scripts/add_project.ts \
+            --project-name "${{ steps.issue-body.outputs.project-name }}" \
+            --use-github-projects ${{ steps.issue-body.outputs.use-github-projects }} \
+            --repositories '${{ steps.issue-body.outputs.repositories }}' \
+            --github-username "${{ steps.issue-body.outputs.github-username }}"
