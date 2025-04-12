@@ -1,0 +1,57 @@
+name: '🗑️ Solicitar Exclusão/Arquivamento de Projeto'
+description: 'Solicitar a exclusão permanente ou arquivamento de um projeto da organização. A **exclusão** remove todos os dados associados, incluindo repositórios, GitHub Pages e releases. O **arquivamento**, por outro lado, preserva o histórico para referência futura, tornando o projeto _read-only_.'
+title: '[REMOVE PROJETO] Solicitação de remoção/arquivamento'
+labels: ['remover-projeto', 'em-análise']
+body:
+  - type: input
+    id: project-name
+    attributes:
+      label: 'Nome do Projeto'
+      description: 'Digite o nome **exato** do projeto a ser removido/arquivado. Certifique-se de que o nome corresponda precisamente ao nome do projeto no GitHub, incluindo letras maiúsculas e minúsculas. Isso garante que a ação seja aplicada ao projeto correto.'
+      placeholder: 'Ex: Nucleo 42'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: action-type
+    attributes:
+      label: 'Tipo de Ação'
+      description: 'Escolha o tipo de ação a ser realizada. **EXCLUIR**: remove permanentemente todos os artefatos do projeto, como times, repositórios (incluindo branches e tags), GitHub Projects, wikis e GitHub Actions. Esta ação é **irreversível** e todos os dados serão perdidos. Use com extrema cautela. **ARQUIVAR**: mantém repositórios e projetos como referência (read-only), removendo apenas acessos de escrita. Útil para preservar o histórico, discussões e a base de conhecimento do projeto sem permitir modificações futuras. Arquivar é recomendado para projetos concluídos ou descontinuados que possam ser úteis como referência.'
+      options:
+        - 'Excluir (irreversível)'
+        - 'Arquivar (preserva histórico)'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: removal-reason
+    attributes:
+      label: 'Motivo Principal'
+      description: 'Selecione o motivo mais adequado para a remoção ou arquivamento. Projetos concluídos e documentados **não devem ser removidos**, mas sim arquivados para referência futura. A remoção deve ser reservada para projetos abandonados, inativos ou descontinuados. Se o motivo não se encaixar nas opções, selecione "Outro" e forneça detalhes.'
+      options:
+        - 'Abandono (equipe deixou o projeto)'
+        - 'Inatividade (sem contribuições há mais de 30 dias)'
+        - 'Descontinuação (projeto obsoleto)'
+        - 'Outro (especifique abaixo)'
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason-details
+    attributes:
+      label: "Detalhes do Motivo (se 'Outro')"
+      description: 'Descreva o motivo específico para remoção/arquivamento. Forneça o máximo de detalhes possível para ajudar na avaliação da solicitação. Inclua informações sobre o impacto da remoção/arquivamento e alternativas consideradas.'
+      placeholder: 'Ex: Equipe abandonou o projeto. Não há mais interesse ou necessidade de manutenção. O projeto não tem mais usuários ativos e não há planos de retomada.'
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 'Informações adicionais'
+      description: 'Descreva brevemente a situação que levou a esta solicitação. Inclua detalhes relevantes que ajudem na análise da solicitação.'
+      placeholder: |
+        Ex1: "Minha equipe ficou inativa e não consigo mais pessoas para dar continuidade."
+        Ex2: "O projeto foi abandonado pela equipe original há mais de 30 dias."
+    validations:
+      required: false
