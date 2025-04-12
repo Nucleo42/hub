@@ -1,5 +1,5 @@
 name: '🗑️ Solicitar Exclusão/Arquivamento de Projeto'
-description: 'Solicitar a exclusão permanente ou arquivamento de um projeto da organização. A **exclusão** remove todos os dados associados, incluindo repositórios, GitHub Pages e releases. O **arquivamento**, por outro lado, preserva o histórico para referência futura, tornando o projeto _read-only_.'
+description: 'Solicite a **exclusão** (remove repositórios, Pages, releases e dados) ou o **arquivamento** (mantém histórico e torna o projeto _read-only_) de um projeto da organização.'
 title: '[REMOVE PROJETO] Solicitação de remoção/arquivamento'
 labels: ['remover-projeto', 'em-análise']
 body:
