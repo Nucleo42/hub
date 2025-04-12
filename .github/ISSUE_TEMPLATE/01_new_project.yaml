@@ -1,76 +1,74 @@
-name: 🚀 Solicitar Novo Projeto
-description: Solicitar a criação de um novo projeto na organização
-title: "[NOVO PROJETO] Solicitação de criação de projeto"
-labels: ["novo-projeto", "em-análise"]
+name: '🚀 Solicitar Novo Projeto'
+description: 'Solicitar a criação de um novo projeto na organização'
+title: '[NOVO PROJETO] Solicitação de criação de projeto'
+labels: ['novo-projeto', 'em-análise']
 body:
   - type: markdown
     attributes:
-      value: |
-        Obrigado por propor um novo projeto! Por favor, preencha as informações abaixo para que possamos avaliar sua solicitação.
+      value: 'Obrigado por propor um novo projeto! Por favor, preencha as informações abaixo para que possamos avaliar sua solicitação.'
 
   - type: input
     id: project-name
     attributes:
-      label: Nome do Projeto
-      description: Digite o nome do novo projeto
-      placeholder: ex. Sistema de Gerenciamento de Tarefas
+      label: 'Nome do Projeto'
+      description: 'Digite o nome do novo projeto'
+      placeholder: 'Ex: Nucleo 42'
     validations:
       required: true
 
   - type: textarea
     id: project-description
     attributes:
-      label: Descrição do Projeto
-      description: Forneça uma breve descrição do projeto, seus objetivos e possíveis benefícios
-      placeholder: Este projeto visa criar um sistema de...
+      label: 'Descrição do Projeto'
+      description: 'Forneça uma breve descrição do projeto, seus objetivos e possíveis benefícios'
+      placeholder: 'Este projeto visa criar um sistema de...'
     validations:
       required: true
 
   - type: dropdown
     id: use-github-projects
     attributes:
-      label: Usar GitHub Projects?
-      description: O projeto utilizará o GitHub Projects para gestão de tarefas?
+      label: 'Usar GitHub Projects?'
+      description: 'O projeto utilizará o GitHub Projects para gestão de tarefas?'
       options:
-        - Sim
-        - Não
+        - 'Não'
+        - 'Sim'
     validations:
       required: true
 
   - type: checkboxes
     id: repositories
     attributes:
-      label: Repositórios a serem criados
-      description: Selecione os repositórios necessários para o projeto
+      label: 'Repositórios a serem criados'
+      description: 'Selecione os repositórios necessários para o projeto'
       options:
-        - label: Back-end
-        - label: Front-end
-        - label: Mobile (Android e iOS)
-        - label: Mobile (Multiplataforma)
-        - label: Design (apenas se usar GitHub Projects)
-        - label: Monorepo (selecione apenas esta opção se for um único repositório para todo o projeto)
+        - label: 'Back-end'
+        - label: 'Front-end'
+        - label: 'Mobile (Android e iOS)'
+        - label: 'Mobile (Multiplataforma)'
+        - label: 'Design (apenas se usar GitHub Projects)'
+        - label: 'Monorepo (selecione apenas esta opção se for um único repositório para todo o projeto)'
     validations:
       required: true
 
   - type: input
     id: github-username
     attributes:
-      label: Seu Username no GitHub
-      description: Digite seu nome de usuário no GitHub
-      placeholder: ex. octocat
+      label: 'Seu Username no GitHub'
+      description: 'Digite seu nome de usuário no GitHub'
+      placeholder: 'Ex: octocat'
     validations:
       required: true
 
   - type: input
     id: discord-username
     attributes:
-      label: Seu Username no Discord
-      description: Digite seu nome de usuário no Discord (incluindo o #)
-      placeholder: ex. usuario
+      label: 'Seu Username no Discord'
+      description: 'Digite seu nome de usuário no Discord'
+      placeholder: 'Ex: octocat'
     validations:
       required: true
 
   - type: markdown
     attributes:
-      value: |
-        Obrigado por preencher todas as informações. Sua solicitação será analisada em breve.
+      value: 'Obrigado por preencher todas as informações. Sua solicitação será analisada em breve.'
