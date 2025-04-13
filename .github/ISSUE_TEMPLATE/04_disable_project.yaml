@@ -1,5 +1,5 @@
 name: '🗑️ Solicitar Exclusão/Arquivamento de Projeto'
-description: 'Solicite a exclusão ou arquivamento de um projeto da organização. A *exclusão* apaga repositórios, Pages e releases. O *arquivamento* mantém tudo e torna o projeto _read-only_.'
+description: 'Solicite a exclusão ou arquivamento de um projeto da organização Nucleo 42.'
 title: '[REMOVE PROJETO] Solicitação de remoção/arquivamento'
 labels: ['remover-projeto', 'em-análise']
 body:
